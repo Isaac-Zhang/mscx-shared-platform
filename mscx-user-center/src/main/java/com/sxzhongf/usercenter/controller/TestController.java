@@ -2,6 +2,7 @@ package com.sxzhongf.usercenter.controller;
 
 import com.sxzhongf.usercenter.dao.user.UserMapper;
 import com.sxzhongf.usercenter.domain.entity.user.User;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,13 +16,14 @@ import java.util.Date;
  * @since 2019/7/11
  */
 @RestController
+@RequiredArgsConstructor(onConstructor = @__(@Autowired)) //处理IDEA注入警告的方式推荐lombok实现
 public class TestController {
-    private final UserMapper userMapper;
 
-    @Autowired
-    public TestController(UserMapper userMapper) {
-        this.userMapper = userMapper;
-    }
+    /**
+     * @RequiredArgsConstructor(onConstructor = @__(@Autowired))
+     * //处理IDEA注入警告的方式推荐lombok实现
+     */
+    private final UserMapper userMapper;
 
     @GetMapping("/insert")
     public User testInsertUser() {

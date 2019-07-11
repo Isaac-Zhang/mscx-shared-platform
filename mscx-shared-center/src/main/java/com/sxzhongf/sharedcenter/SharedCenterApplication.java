@@ -2,6 +2,8 @@ package com.sxzhongf.sharedcenter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
@@ -15,5 +17,17 @@ import tk.mybatis.spring.annotation.MapperScan;
 public class SharedCenterApplication {
     public static void main(String[] args) {
         SpringApplication.run(SharedCenterApplication.class, args);
+    }
+
+    /**
+     * 在Spring 容器中，创建一个对象，类型是{@link RestTemplate}
+     * 名称/ID 为 restTemplate
+     * <bean id ="restTemplate" class="XXX.RestTemplate" />
+     *
+     * @return restTemplate
+     */
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }
