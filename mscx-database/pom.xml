@@ -6,10 +6,52 @@
         <artifactId>mscx-shared-platform</artifactId>
         <groupId>com.sxzhongf</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mscx-database</artifactId>
 
+    <properties>
+        <!-- Properties are prefixed with flyway. -->
+        <flyway.user>root</flyway.user>
+        <flyway.password>12345678</flyway.password>
+        <!-- List are defined as comma-separated values -->
+        <!--<flyway.schemas>shared_platform_user_center</flyway.schemas>-->
+        <!--<flyway.url>jdbc:mysql://127.0.0.1:3306/shared_platform_user_center</flyway.url>-->
+        <flyway.schemas>shared_platform_shared_center</flyway.schemas>
+        <flyway.url>jdbc:mysql://127.0.0.1:3306/shared_platform_shared_center</flyway.url>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>5.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.12</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>5.2.4</version>
+                <configuration>
+                    <url>${flyway.url}</url>
+                    <user>${flyway.user}</user>
+                    <password>${flyway.password}</password>
+                    <locations>
+                        <!--<location>filesystem:src/main/resources/db/user_center/migration</location>-->
+                        <location>filesystem:src/main/resources/db/shared_center/migration</location>
+                    </locations>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -8,11 +8,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
+        <!--语义化的版本控制-->
+        <!--2：主版本，第几代-->
+        <!--1：次版本，一些功能的增加，但是架构没有太大的变化，是兼容的-->
+        <!--5：增量版本，bug修复-->
+        <!--release：里程碑，SNAPSHOT：开发版 M：里程碑 RELEASE：正式版-->
         <version>2.1.5.RELEASE</version>
     </parent>
 
     <modules>
         <module>mscx-database</module>
+        <module>mscx-user-center</module>
     </modules>
 
     <properties>
@@ -25,14 +31,29 @@
     <name>mscx-shared-platform</name>
     <description>使用Spring Cloud Alibaba 实现微信小程序分享系统</description>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+            <scope>provide</scope>
+        </dependency>
+    </dependencies>
 
+    <repositories>
+        <repository>
+            <id>alibaba</id>
+            <name>ali Milestones</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>
