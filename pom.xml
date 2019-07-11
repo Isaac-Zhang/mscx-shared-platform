@@ -19,6 +19,7 @@
     <modules>
         <module>mscx-database</module>
         <module>mscx-user-center</module>
+        <module>mscx-shared-center</module>
     </modules>
 
     <properties>

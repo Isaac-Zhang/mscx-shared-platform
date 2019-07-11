@@ -12,7 +12,7 @@
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
             <property name="caseSensitive" value="true"/>
-            <property name="lombok" value="Getter,Setter,ToString" />
+            <property name="lombok" value="Getter,Setter,ToString"/>
         </plugin>
 
         <jdbcConnection driverClass="${jdbc.driverClass}"
@@ -22,14 +22,14 @@
         </jdbcConnection>
 
         <!--实体-->
-        <javaModelGenerator targetPackage="com.sxzhongf.usercenter.domain.entity.${moduleName}"
+        <javaModelGenerator targetPackage="com.sxzhongf.sharedcenter.domain.entity.${moduleName}"
                             targetProject="src/main/java"/>
 
         <!--mapper.xml-->
-        <sqlMapGenerator targetPackage="com.sxzhongf.usercenter.dao.${moduleName}"
+        <sqlMapGenerator targetPackage="com.sxzhongf.sharedcenter.dao.${moduleName}"
                          targetProject="src/main/resources"/>
         <!--mapper接口-->
-        <javaClientGenerator targetPackage="com.sxzhongf.usercenter.dao.${moduleName}"
+        <javaClientGenerator targetPackage="com.sxzhongf.sharedcenter.dao.${moduleName}"
                              targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
