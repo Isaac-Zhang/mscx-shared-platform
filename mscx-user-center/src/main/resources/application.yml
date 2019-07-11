@@ -4,6 +4,8 @@ spring:
     hikari:
       username: root
       password: 12345678
+      # mysql-connector-java >= 6.X com.mysql.cj.jdbc.Driver
+      # mysql-connector-java <= 5.X com.mysql.jdbc.Driver
       driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: user-center

@@ -23,7 +23,7 @@
 -- -- Table `shared_platform`.`user`
 -- -- -----------------------------------------------------
  CREATE TABLE IF NOT EXISTS `user` (
-   `id` BIGINT NOT NULL COMMENT 'Id',
+   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'Id',
    `wx_id` VARCHAR(64) NOT NULL DEFAULT '' COMMENT '微信id',
    `wx_nickname` VARCHAR(64) NOT NULL DEFAULT '' COMMENT '微信昵称',
    `roles` VARCHAR(100) NOT NULL DEFAULT '' COMMENT '角色',
