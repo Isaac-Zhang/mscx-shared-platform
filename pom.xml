@@ -13,6 +13,24 @@
         <!--1：次版本，一些功能的增加，但是架构没有太大的变化，是兼容的-->
         <!--5：增量版本，bug修复-->
         <!--release：里程碑，SNAPSHOT：开发版 M：里程碑 RELEASE：正式版-->
+        <!--
+            Spring Cloud 版本规则
+            Greenwich SR2
+            Greenwich : release train(发布列车，用字母顺序命名站点 -> 伦敦地铁站名)
+            目前已发布的版本有：
+            Angel
+            Brixton
+            Camden
+            Dalston
+            Edgware
+            Finchley
+            Greenwich
+            Hoxton(还没有正式发布)
+
+            SR -> Service Release (bug 修复)
+            Greenwich RELEASE (Greenwich 版本的第一个正式版本)
+            Greenwich SR2 (Greenwich 版本的第二个修复版本)
+        -->
         <version>2.1.5.RELEASE</version>
     </parent>
 
