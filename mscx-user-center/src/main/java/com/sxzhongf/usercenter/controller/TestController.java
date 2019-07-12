@@ -38,5 +38,4 @@ public class TestController {
         userMapper.insertSelective(user);
         return user;
     }
-
 }

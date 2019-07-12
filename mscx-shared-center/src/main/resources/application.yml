@@ -9,5 +9,9 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: shared-center
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
 server:
   port: 8010
