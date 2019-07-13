@@ -2,6 +2,7 @@ package com.sxzhongf.sharedcenter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import tk.mybatis.spring.annotation.MapperScan;
@@ -23,10 +24,12 @@ public class SharedCenterApplication {
      * 在Spring 容器中，创建一个对象，类型是{@link RestTemplate}
      * 名称/ID 为 restTemplate
      * <bean id ="restTemplate" class="XXX.RestTemplate" />
+     * {@link LoadBalanced} 为RestTemplate整合Ribbon调用
      *
      * @return restTemplate
      */
     @Bean
+    @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }

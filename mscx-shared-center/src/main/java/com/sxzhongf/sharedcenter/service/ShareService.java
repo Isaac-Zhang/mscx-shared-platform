@@ -8,9 +8,15 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 /**
  * ShareService for TODO
@@ -24,6 +30,7 @@ import org.springframework.web.client.RestTemplate;
 public class ShareService {
     private final ShareMapper shareMapper;
     private final RestTemplate restTemplate;
+//    private final DiscoveryClient discoveryClient;
 
     public ShareDTO findById(Long id) {
         // 获取分享详情
@@ -33,9 +40,28 @@ public class ShareService {
         // 获取发布人ID
         Long userId = share.getUserId();
 
-        //调用用户微服务 /users/{userId}
+        // 获取用户中心所有实例的信息
+//        List<ServiceInstance> instances = discoveryClient.getInstances("user-center");
+//        // http://localhost:8081/users/{id}
+////        String targetUri = instances.stream()
+////                                    //数据转换
+////                                    .map(i -> i.getUri().toString() + "/users/{id}")
+////                                    //此处只有一个实例，先使用第一个直接获取，后续需要更改为list
+////                                    .findFirst()
+////                                    .orElseThrow(() -> new IllegalArgumentException("当前没有实例"));
+//
+//        // 自定义客户端负载均衡能力
+//        // 获取所有用户中心服务的实例列表
+//        List<String> targetUris = instances.stream().map(i -> i.getUri().toString() + "/users/{id}").collect(Collectors.toList());
+//
+//        //获取随机实例
+//        int i = ThreadLocalRandom.current().nextInt(targetUris.size());
+//
+//        //调用用户微服务 /users/{userId}
+//        log.info("请求的目标地址：{}", targetUris.get(i));
+
         ResponseEntity<UserDTO> userEntity = restTemplate.getForEntity(
-                "http://localhost:8081/users/{id}",
+                "http://user-center/users/{userId}",
                 UserDTO.class, userId
         );
         UserDTO userDTO = new UserDTO();

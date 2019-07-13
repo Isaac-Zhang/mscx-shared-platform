@@ -15,3 +15,11 @@ spring:
         server-addr: localhost:8848
 server:
   port: 8010
+
+user-center: # service name
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule # 规则类的全路径名称
+ribbon:
+  eager-load:
+    enabled: true # 饥饿加载激活
+    clients: user-center # 为哪些clients开启

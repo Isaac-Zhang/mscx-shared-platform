@@ -13,5 +13,12 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+        metadata:
+          haha: isaac
+          version: v1
+        # 指定namespace
+        # namespace: 404060ce-2e6c-4f72-8083-2beb4ca921ad
+        # 指定集群名称
+        # cluster-name: BJ
 server:
-  port: 8080
+  port: 8082
