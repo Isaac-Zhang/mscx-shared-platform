@@ -63,6 +63,7 @@ public class NacosSameClusterWeightRule extends AbstractLoadBalancerRule {
             List<Instance> instances = namingService.selectInstances(serviceName, true);
             // 2. 过滤出相同集群下的所有实例 B
             List<Instance> sameClusterInstances = instances.stream()
+//                                                           .filter(instance -> "v1".equals(instance.getMetadata().get("version")))
                                                            .filter(instance -> Objects.equals(instance.getClusterName(), clusterName))
                                                            .collect(Collectors.toList());
             // 3. 如果B为空，则使用 A
@@ -77,6 +78,7 @@ public class NacosSameClusterWeightRule extends AbstractLoadBalancerRule {
             // 4. 基于权重的负载均衡算法，返回一个实例 A
             Instance instance = ExtendBalancer.getHostByRandomWeightOverride(instancesChoosen);
             log.info("choose instance is : port = {}, instance = {}", instance.getPort(), instance);
+
             return new NacosServer(instance);
         } catch (NacosException e) {
             e.printStackTrace();

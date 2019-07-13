@@ -14,6 +14,11 @@ spring:
       discovery:
         server-addr: localhost:8848
         cluster-name: NJ
+        metadata:
+          # 当前实例版本
+          version: v1
+          # 允许调用的提供者版本
+          target-version: v1
 server:
   port: 8010
 

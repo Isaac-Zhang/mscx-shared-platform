@@ -2,6 +2,7 @@ package com.sxzhongf.ribbonconfig;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
+import com.sxzhongf.sharedcenter.configuration.NacosFinalRule;
 import com.sxzhongf.sharedcenter.configuration.NacosSameClusterWeightRule;
 import com.sxzhongf.sharedcenter.configuration.NacosWeightRule4Ribbon;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,6 @@ public class RibbonConfiguration {
 
     @Bean
     public IRule ribbonRule(){
-        return new NacosSameClusterWeightRule();
+        return new NacosFinalRule();
     }
 }
