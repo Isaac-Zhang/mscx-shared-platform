@@ -4,6 +4,7 @@ import com.sxzhongf.sharedcenter.dao.share.ShareMapper;
 import com.sxzhongf.sharedcenter.domain.dto.content.ShareDTO;
 import com.sxzhongf.sharedcenter.domain.dto.user.UserDTO;
 import com.sxzhongf.sharedcenter.domain.entity.share.Share;
+import com.sxzhongf.sharedcenter.feignclients.IUserCenterFeignClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -29,8 +30,10 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ShareService {
     private final ShareMapper shareMapper;
-    private final RestTemplate restTemplate;
+    //    private final RestTemplate restTemplate;
 //    private final DiscoveryClient discoveryClient;
+    //使用Feign替换RestTemplate
+    private final IUserCenterFeignClient userCenterFeignClient;
 
     public ShareDTO findById(Long id) {
         // 获取分享详情
@@ -60,15 +63,17 @@ public class ShareService {
 //        //调用用户微服务 /users/{userId}
 //        log.info("请求的目标地址：{}", targetUris.get(i));
 
-        ResponseEntity<UserDTO> userEntity = restTemplate.getForEntity(
-                "http://user-center/users/{userId}",
-                UserDTO.class, userId
-        );
-        UserDTO userDTO = new UserDTO();
-        if (null != userEntity) {
-            userDTO = userEntity.getBody();
-            log.info("ShareService#findById userDTO: {}", userDTO);
-        }
+//        ResponseEntity<UserDTO> userEntity = restTemplate.getForEntity(
+//                "http://user-center/users/{userId}",
+//                UserDTO.class, userId
+//        );
+//        UserDTO userDTO = new UserDTO();
+//        if (null != userEntity) {
+//            userDTO = userEntity.getBody();
+//            log.info("ShareService#findById userDTO: {}", userDTO);
+//        }
+        //使用 FeignClient 来替换掉RestTemplate调用
+        UserDTO userDTO = this.userCenterFeignClient.findById(userId);
 
         ShareDTO shareDTO = new ShareDTO();
 //      shareDTO = ShareDTO.builder()
