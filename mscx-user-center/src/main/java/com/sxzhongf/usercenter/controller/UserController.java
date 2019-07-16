@@ -5,10 +5,7 @@ import com.sxzhongf.usercenter.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * UserController for TODO
@@ -29,5 +26,15 @@ public class UserController {
     public User findById(@PathVariable Long id) {
         log.info("UserController#findById : {}", id);
         return userService.findById(id);
+    }
+
+    @GetMapping("/q")
+    public User query(User user){
+        return user;
+    }
+
+    @PostMapping("/create")
+    public User createUser(@RequestBody User user){
+        return null;
     }
 }

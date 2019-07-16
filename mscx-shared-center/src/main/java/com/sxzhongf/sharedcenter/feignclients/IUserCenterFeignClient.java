@@ -1,5 +1,6 @@
 package com.sxzhongf.sharedcenter.feignclients;
 
+import com.sxzhongf.sharedcenter.configuration.UserCenterFeignConfiguration;
 import com.sxzhongf.sharedcenter.domain.dto.user.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @since 2019/7/15
  */
 @FeignClient(name = "user-center")
+//@FeignClient(name = "user-center",configuration = UserCenterFeignConfiguration.class)
 public interface IUserCenterFeignClient {
 
     /**
