@@ -20,6 +20,10 @@ spring:
           version: v1
           # 允许调用的提供者版本
           target-version: v1
+    sentinel:
+      transport:
+        # 指定sentinel 控制台的地址
+        dashboard: localhost:8080
   main:
     allow-bean-definition-overriding: true
 server:
@@ -51,3 +55,8 @@ feign:
     max-connections-per-route: 50
   okhttp:
     enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: sentinel
