@@ -33,6 +33,9 @@ spring:
         # 心跳发送周期，默认值为null
         # 但在SimpleHttpHeartbeatSender 会使用默认值10s
         heartbeat-interval-ms: 10000
+      filter:
+        # 关闭掉对SpringMVC 端点的保护
+        enabled: false
   main:
     allow-bean-definition-overriding: true
 server:
@@ -51,6 +54,8 @@ logging:
     com.sxzhongf.sharedcenter.feignclients.IUserCenterFeignClient: debug
     com.sxzhongf.sharedcenter.feignclients.ITestUserCenterFeignClient: debug
 feign:
+  sentinel:
+    enabled: true
   client:
     config:
       defaultSynchronousMethodHandler:
