@@ -1,11 +1,13 @@
 package com.sxzhongf.sharedcenter.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.sxzhongf.sharedcenter.domain.dto.user.UserDTO;
 import com.sxzhongf.sharedcenter.feignclients.test.ITestBaiduFeignClient;
 import com.sxzhongf.sharedcenter.service.test.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -32,5 +34,12 @@ public class TestController {
     @GetMapping("baidu")
     public String getBaidu() {
         return this.testBaiduFeignClient.getBaidu();
+    }
+
+    @GetMapping("/test-hot")
+    @SentinelResource("hot")
+    public String testHot(@RequestParam(required = false) String a,
+                          @RequestParam(required = false) String b) {
+        return a + " " + b;
     }
 }

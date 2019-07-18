@@ -19,5 +19,8 @@ spring:
         #namespace: 404060ce-2e6c-4f72-8083-2beb4ca921ad
         # 指定集群名称
         cluster-name: BJ
+    sentinel:
+      transport:
+        dashboard: localhost:8080
 server:
-  port: 8082
+  port: 8081
