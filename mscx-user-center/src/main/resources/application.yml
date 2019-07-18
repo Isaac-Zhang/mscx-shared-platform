@@ -21,6 +21,6 @@ spring:
         cluster-name: BJ
     sentinel:
       transport:
-        dashboard: localhost:8080
+        dashboard: localhost:1111
 server:
   port: 8081

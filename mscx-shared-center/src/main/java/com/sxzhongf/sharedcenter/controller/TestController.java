@@ -1,6 +1,9 @@
 package com.sxzhongf.sharedcenter.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.RuleConstant;
+import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
+import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
 import com.sxzhongf.sharedcenter.domain.dto.user.UserDTO;
 import com.sxzhongf.sharedcenter.feignclients.test.ITestBaiduFeignClient;
 import com.sxzhongf.sharedcenter.service.test.TestService;
@@ -9,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * TestController for TODO
@@ -28,7 +34,7 @@ public class TestController {
         return testService.query(userDTO);
     }
 
-    @Autowired
+    @Autowired(required = false)
     private ITestBaiduFeignClient testBaiduFeignClient;
 
     @GetMapping("baidu")
@@ -41,5 +47,27 @@ public class TestController {
     public String testHot(@RequestParam(required = false) String a,
                           @RequestParam(required = false) String b) {
         return a + " " + b;
+    }
+
+    @GetMapping("/test-code-flow-rule")
+    public String testCodeQPSRule() {
+        initFlowQpsRule("/share/1");
+        return "success";
+    }
+
+    /**
+     * 代码添加流控规则 -> QPS
+     *
+     * @param resourceName 需要限制的资源名称
+     */
+    private void initFlowQpsRule(String resourceName) {
+        List<FlowRule> ruleList = new ArrayList<>();
+        FlowRule rule = new FlowRule(resourceName);
+        // set limit qps to 20
+        rule.setCount(20);
+        rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
+        rule.setLimitApp("default");
+        ruleList.add(rule);
+        FlowRuleManager.loadRules(ruleList);
     }
 }

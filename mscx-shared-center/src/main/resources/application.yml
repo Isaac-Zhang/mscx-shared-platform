@@ -23,7 +23,16 @@ spring:
     sentinel:
       transport:
         # 指定sentinel 控制台的地址
-        dashboard: localhost:8080
+        dashboard: localhost:1111
+        # 指定和控制台通信的IP
+        # 如不配置，会自动选择一个IP注册
+        client-ip: 127.0.0.1
+        # 指定和控制台通信的端口，默认值为8719
+        # 如不设置，会自动从8719开始扫描，依次+1，直到找到未被使用的端口
+        port: 8719
+        # 心跳发送周期，默认值为null
+        # 但在SimpleHttpHeartbeatSender 会使用默认值10s
+        heartbeat-interval-ms: 10000
   main:
     allow-bean-definition-overriding: true
 server:
