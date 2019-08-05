@@ -14,9 +14,7 @@
     <artifactId>mscx-shared-center</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>mscx-shared-center</name>
-    <description>
-        内容共享中心服务
-    </description>
+    <description>内容共享中心服务</description>
 
     <dependencies>
         <dependency>
