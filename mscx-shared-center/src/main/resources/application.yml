@@ -27,7 +27,7 @@ spring:
             server-addr: localhost:8848
             dataId: ${spring.application.name}-flow-rules
             groupId: SENTINEL_GROUP
-            # 规则类型，取值见：org.springframework.cloud.alibaba.sentinel.datasource.RuleType
+            # 规则类型，取值见：com.alibaba.cloud.sentinel.datasource.RuleType
             rule_type: flow
         degrade:
           nacos:
