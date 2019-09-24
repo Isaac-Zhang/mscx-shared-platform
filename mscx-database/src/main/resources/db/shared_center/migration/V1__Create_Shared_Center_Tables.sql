@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS `mid_user_share` (
   `share_id` BIGINT NOT NULL COMMENT 'share.id',
   `user_id` BIGINT NOT NULL COMMENT 'user.id',
   PRIMARY KEY (`id`),
-  INDEX `fk_mid_user_share_share1_idx` (`share_id` ASC) VISIBLE,
-  INDEX `fk_mid_user_share_user1_idx` (`user_id` ASC) VISIBLE)
+  INDEX `fk_mid_user_share_share1_idx` (`share_id` ASC),
+  INDEX `fk_mid_user_share_user1_idx` (`user_id` ASC))
 ENGINE = InnoDB
 COMMENT = '用户-分享中间表【描述用户购买的分享】';
 

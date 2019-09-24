@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `bonus_event_log` (
    `create_time` DATETIME NULL COMMENT '创建时间',
    `description` VARCHAR(100) NULL COMMENT '描述',
    PRIMARY KEY (`id`),
-   INDEX `fk_bonus_event_log_user1_idx` (`user_id` ASC) VISIBLE)
+   INDEX `fk_bonus_event_log_user1_idx` (`user_id` ASC))
  ENGINE = InnoDB
  COMMENT = '积分变更记录表';
 
