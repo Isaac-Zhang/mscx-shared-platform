@@ -12,6 +12,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>mscx-gateway</name>
   <description>gateway</description>
+  <packaging>jar</packaging>
 
   <dependencies>
     <dependency>

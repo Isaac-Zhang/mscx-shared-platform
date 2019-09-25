@@ -1,1 +1,34 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: mscx-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          # 让gateway通过服务发现组件找到其他微服务
+          enabled: true
+      routes:
+        - id: after_route
+          uri: lb://user-center
+          predicates:
+            # 当前仅当请求时间在配置时候之后，请求才会转发
+            # 按照如下配置，请求会报404错误
+            - After=2010-01-01T18:00:00.789-07:00[America/Denver]
+            # 当Host符合**.geekplus.com.cn或**.life-runner.com时，才会转发用户微服务
+            # 如Host满足条件，则访问http://localhost:9999/** -> user-center/**
+            # eg. 访问http://localhost:9999/users/1 -> user-center/users/1
+            #- Host=**.geekplus.com.cn,**.life-runner.com
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
