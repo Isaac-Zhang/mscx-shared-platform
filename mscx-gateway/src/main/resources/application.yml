@@ -10,7 +10,7 @@ spring:
     gateway:
       discovery:
         locator:
-          # ��gatewayͨ������������ҵ�����΢����
+          # gateway通过discovery自动发现其他微服务
           enabled: true
       routes:
         - id: after_route
@@ -24,7 +24,9 @@ spring:
             # eg. http://localhost:9999/users/1 -> user-center/users/1
             #- Host=**.geekplus.com.cn,**.life-runner.com
             - TimeBetween=上午6:00,下午11:00
-
+          filters:
+            - AddRequestHeader=CompanyKey,123456
+            - AddResponseHeader=Success,Isaac
 management:
   endpoints:
     web:
