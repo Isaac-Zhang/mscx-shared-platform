@@ -10,19 +10,20 @@ spring:
     gateway:
       discovery:
         locator:
-          # ÈÃgatewayÍ¨¹ı·şÎñ·¢ÏÖ×é¼şÕÒµ½ÆäËûÎ¢·şÎñ
+          # ï¿½ï¿½gatewayÍ¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½Î¢ï¿½ï¿½ï¿½ï¿½
           enabled: true
       routes:
         - id: after_route
           uri: lb://user-center
           predicates:
-            # µ±Ç°½öµ±ÇëÇóÊ±¼äÔÚÅäÖÃÊ±ºòÖ®ºó£¬ÇëÇó²Å»á×ª·¢
-            # °´ÕÕÈçÏÂÅäÖÃ£¬ÇëÇó»á±¨404´íÎó
-            - After=2010-01-01T18:00:00.789-07:00[America/Denver]
-            # µ±Host·ûºÏ**.geekplus.com.cn»ò**.life-runner.comÊ±£¬²Å»á×ª·¢ÓÃ»§Î¢·şÎñ
-            # ÈçHostÂú×ãÌõ¼ş£¬Ôò·ÃÎÊhttp://localhost:9999/** -> user-center/**
-            # eg. ·ÃÎÊhttp://localhost:9999/users/1 -> user-center/users/1
+            # å½“å½“å‰æ—¶é—´æ™šäºè®¾ç½®æ—¶é—´ä¹‹å,æ‰èƒ½è®¿é—®
+            # å¦åˆ™å¾—åˆ°404é”™è¯¯
+            #- After=2010-01-01T18:00:00.789-07:00[America/Denver]
+            # å½“Hostå±äº**.geekplus.com.cnæˆ–**.life-runner.comæ—¶
+            # http://localhost:9999/** -> user-center/**
+            # eg. http://localhost:9999/users/1 -> user-center/users/1
             #- Host=**.geekplus.com.cn,**.life-runner.com
+            - TimeBetween=ä¸Šåˆ6:00,ä¸‹åˆ11:00
 
 management:
   endpoints:
