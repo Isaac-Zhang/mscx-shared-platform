@@ -24,6 +24,16 @@ spring:
             # eg. http://localhost:9999/users/1 -> user-center/users/1
             #- Host=**.geekplus.com.cn,**.life-runner.com
             - TimeBetween=上午6:00,下午11:00
+            - Path=/users/**
+          filters:
+            - AddRequestHeader=CompanyKey,123456
+            - AddResponseHeader=Success,Isaac
+            - PreLog=CustomLogKey,CustomLogValue
+        - id: content_route
+          uri: lb://shared-center
+          predicates:
+            - After=2010-01-01T18:00:00.789-07:00[America/Denver]
+            - Path=/share/**
           filters:
             - AddRequestHeader=CompanyKey,123456
             - AddResponseHeader=Success,Isaac
