@@ -27,6 +27,7 @@ spring:
           filters:
             - AddRequestHeader=CompanyKey,123456
             - AddResponseHeader=Success,Isaac
+            - PreLog=CustomLogKey,CustomLogValue
 management:
   endpoints:
     web:
