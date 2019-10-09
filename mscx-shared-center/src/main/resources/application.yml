@@ -18,7 +18,7 @@ spring:
 #        metadata:
 #          # 当前实例版本
 #          version: v1
-#          # 允许调用的提供者版本
+#          # 当前版本的内容中心允许调用的用户中心版本
 #          target-version: v1
     sentinel:
       datasource:

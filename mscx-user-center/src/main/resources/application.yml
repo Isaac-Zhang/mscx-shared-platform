@@ -18,9 +18,9 @@ spring:
         # 指定namespace(profile)
         #namespace: 404060ce-2e6c-4f72-8083-2beb4ca921ad
         # 指定集群名称
-        cluster-name: BJ
+        cluster-name: NJ
     sentinel:
       transport:
         dashboard: localhost:1111
 server:
-  port: 8081
+  port: 8022
