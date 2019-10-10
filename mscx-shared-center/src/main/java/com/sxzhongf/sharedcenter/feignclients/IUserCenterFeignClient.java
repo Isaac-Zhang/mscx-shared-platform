@@ -1,5 +1,6 @@
 package com.sxzhongf.sharedcenter.feignclients;
 
+import com.sxzhongf.sharedcenter.configuration.UserCenterFeignConfiguration;
 import com.sxzhongf.sharedcenter.domain.dto.user.UserDTO;
 import com.sxzhongf.sharedcenter.feignclients.fallback.UserCenterFeignClientFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "user-center",
     // fallback = UserCenterFeignClientFallback.class,
     fallbackFactory = UserCenterFeignClientFallbackFactory.class
+//    ,configuration = UserCenterFeignConfiguration.class
 )
 //@FeignClient(name = "user-center",configuration = UserCenterFeignConfiguration.class)
 public interface IUserCenterFeignClient {

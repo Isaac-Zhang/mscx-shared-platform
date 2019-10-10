@@ -1,5 +1,6 @@
 package com.sxzhongf.sharedcenter;
 
+import com.sxzhongf.sharedcenter.configuration.UserCenterFeignConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -17,6 +18,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan("com.sxzhongf")
 @SpringBootApplication
 @EnableFeignClients
+    //(defaultConfiguration = GlobalFeignConfiguration.class) 开启feign全局默认配置
 public class SharedCenterApplication {
     public static void main(String[] args) {
         SpringApplication.run(SharedCenterApplication.class, args);

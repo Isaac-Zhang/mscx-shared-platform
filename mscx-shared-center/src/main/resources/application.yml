@@ -64,8 +64,10 @@ feign:
     enabled: true
   client:
     config:
-      defaultSynchronousMethodHandler:
+      user-center:
         loggerLevel: full
+      #defaultSynchronousMethodHandler:
+        #loggerLevel: full
   httpclient:
     # 为feign启用 apache httpclient 做请求，而不使用默认的urlconection
     #enabled: true
