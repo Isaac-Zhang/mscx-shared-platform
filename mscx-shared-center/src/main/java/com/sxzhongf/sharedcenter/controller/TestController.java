@@ -9,6 +9,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.sxzhongf.sharedcenter.domain.dto.user.UserDTO;
 import com.sxzhongf.sharedcenter.feignclients.test.ITestBaiduFeignClient;
 import com.sxzhongf.sharedcenter.sentinal.SharedCenterBlockHandler;
@@ -16,6 +17,8 @@ import com.sxzhongf.sharedcenter.service.test.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +34,7 @@ import java.util.List;
  */
 @RestController
 @Slf4j
+@RefreshScope
 public class TestController {
 
     @Autowired
@@ -134,5 +138,13 @@ public class TestController {
         rule.setLimitApp("default");
         ruleList.add(rule);
         FlowRuleManager.loadRules(ruleList);
+    }
+
+    @Value("${your.configuration}")
+    private String yourConfiguration;
+
+    @GetMapping("/test-config")
+    public String configTest(){
+        return this.yourConfiguration;
     }
 }

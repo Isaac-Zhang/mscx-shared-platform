@@ -23,4 +23,4 @@ spring:
       transport:
         dashboard: localhost:1111
 server:
-  port: 8022
+  port: 8023
