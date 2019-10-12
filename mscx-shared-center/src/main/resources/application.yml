@@ -45,7 +45,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
 server:
-  port: 8010
+  port: 8011
 
 user-center: # service name
   ribbon:

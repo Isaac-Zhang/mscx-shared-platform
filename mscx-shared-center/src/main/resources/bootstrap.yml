@@ -2,9 +2,11 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:8848
+        server-addr: localhost:8848
         file-extension: yml
+        group: dev
+        namespace: c6e56dea-1f3b-42d6-b055-6975d066c9a
   application:
     name: shared-center
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev
