@@ -60,6 +60,7 @@
 
     <build>
         <plugins>
+            <!--springboot 构建可执行fat jars必须的插件，如不添加，在生产环境会有问题-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
