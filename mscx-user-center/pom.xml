@@ -109,6 +109,22 @@
                     </config>
                 </configuration>
             </plugin>
+            <!--生成 HTML 文档-->
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>1.5.6</version>
+                <configuration>
+                    <sourceDirectory>src/docs/asciidoc/generated-by-plugin</sourceDirectory>
+                    <outputDirectory>src/docs/asciidoc/html</outputDirectory>
+                    <backend>html</backend>
+                    <sourceHighlighter>coderay</sourceHighlighter>
+                    <attributes>
+                        <toc>left</toc>
+                    </attributes>
+                </configuration>
+            </plugin>
+
 
         </plugins>
     </build>
