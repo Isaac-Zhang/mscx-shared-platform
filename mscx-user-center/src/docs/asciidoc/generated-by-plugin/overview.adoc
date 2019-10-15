@@ -1,0 +1,39 @@
+= user-center-service
+
+
+[[_overview]]
+== Overview
+provide user center API
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0.0.RC
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : Isaac-Zhang
+__Contact Email__ : magicianisaac@gmail.com
+
+
+=== License information
+[%hardbreaks]
+__License__ : Apache License, Version 2.0
+__License URL__ : https://www.apache.org/licenses/LICENSE-2.0.html
+__Terms of service__ : http://www.geekplus.com.cn
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8023
+__BasePath__ : /
+
+
+=== Tags
+
+* test-controller : Test Controller
+* user-controller : User Controller
+
+
+

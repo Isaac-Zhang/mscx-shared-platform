@@ -1,0 +1,98 @@
+
+[[_definitions]]
+== Definitions
+
+[[_serviceinstance]]
+=== ServiceInstance
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**host** +
+__optional__|string
+|**instanceId** +
+__optional__|string
+|**metadata** +
+__optional__|< string, string > map
+|**port** +
+__optional__|integer (int32)
+|**scheme** +
+__optional__|string
+|**secure** +
+__optional__|boolean
+|**serviceId** +
+__optional__|string
+|**uri** +
+__optional__|<<_uri,URI>>
+|===
+
+
+[[_uri]]
+=== URI
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**absolute** +
+__optional__|boolean
+|**authority** +
+__optional__|string
+|**fragment** +
+__optional__|string
+|**host** +
+__optional__|string
+|**opaque** +
+__optional__|boolean
+|**path** +
+__optional__|string
+|**port** +
+__optional__|integer (int32)
+|**query** +
+__optional__|string
+|**rawAuthority** +
+__optional__|string
+|**rawFragment** +
+__optional__|string
+|**rawPath** +
+__optional__|string
+|**rawQuery** +
+__optional__|string
+|**rawSchemeSpecificPart** +
+__optional__|string
+|**rawUserInfo** +
+__optional__|string
+|**scheme** +
+__optional__|string
+|**schemeSpecificPart** +
+__optional__|string
+|**userInfo** +
+__optional__|string
+|===
+
+
+[[_user]]
+=== User
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**avatarUrl** +
+__optional__|string
+|**bonus** +
+__optional__|integer (int32)
+|**createTime** +
+__optional__|string (date-time)
+|**id** +
+__optional__|integer (int64)
+|**roles** +
+__optional__|string
+|**updateTime** +
+__optional__|string (date-time)
+|**wxId** +
+__optional__|string
+|**wxNickname** +
+__optional__|string
+|===
+
+
+

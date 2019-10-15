@@ -1,0 +1,283 @@
+
+[[_paths]]
+== Paths
+
+[[_getdiscovertclientsusingget]]
+=== getDiscovertClients
+....
+GET /discovery
+....
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|< <<_serviceinstance,ServiceInstance>> > array
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* test-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_testinsertuserusingget]]
+=== testInsertUser
+....
+GET /insert
+....
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_user,User>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* test-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_getservicesusingget]]
+=== getServices
+....
+GET /services
+....
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|< string > array
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* test-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_createuserusingpost]]
+=== createUser
+....
+POST /users/create
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**user** +
+__required__|user|<<_user,User>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_user,User>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* user-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_queryusingget]]
+=== query
+....
+GET /users/q
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^4"]
+|===
+|Type|Name|Schema
+|**Query**|**avatarUrl** +
+__optional__|string
+|**Query**|**bonus** +
+__optional__|integer (int32)
+|**Query**|**createTime** +
+__optional__|string (date-time)
+|**Query**|**id** +
+__optional__|integer (int64)
+|**Query**|**roles** +
+__optional__|string
+|**Query**|**updateTime** +
+__optional__|string (date-time)
+|**Query**|**wxId** +
+__optional__|string
+|**Query**|**wxNickname** +
+__optional__|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_user,User>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* user-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+[[_findbyidusingget]]
+=== findById
+....
+GET /users/{id}
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int64)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_user,User>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* user-controller
+
+
+==== Security
+
+[options="header", cols=".^3,.^4,.^13"]
+|===
+|Type|Name|Scopes
+|**apiKey**|**<<_authorization,Authorization>>**|global
+|===
+
+
+
