@@ -24,3 +24,29 @@ spring:
         dashboard: localhost:1111
 server:
   port: 8023
+
+#  swagger.title：标题
+#  swagger.description：描述
+#  swagger.version：版本
+#  swagger.license：许可证
+#  swagger.licenseUrl：许可证URL
+#  swagger.termsOfServiceUrl：服务条款URL
+#  swagger.contact.name：维护人
+#  swagger.contact.url：维护人URL
+#  swagger.contact.email：维护人email
+#  swagger.base-package：swagger扫描的基础包，默认：全扫描
+#  swagger.base-path：需要处理的基础URL规则，默认："/**"
+# more link: https://github.com/SpringForAll/spring-boot-starter-swagger
+swagger:
+  title: user-center-service
+  description: provide user center API
+  version: 1.0.0.RC
+  license: Apache License, Version 2.0
+  license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+  terms-of-service-url: http://www.geekplus.com.cn
+  contact:
+    email: magicianisaac@gmail.com
+    name: Isaac-Zhang
+    url: http://www.life-runner.com
+  base-package: com.sxzhongf
+  base-path: /**
