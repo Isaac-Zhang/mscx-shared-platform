@@ -37,6 +37,7 @@ server:
 #  swagger.base-package：swagger扫描的基础包，默认：全扫描
 #  swagger.base-path：需要处理的基础URL规则，默认："/**"
 # more link: https://github.com/SpringForAll/spring-boot-starter-swagger
+# 生成markdown & Confluence 可参考 http://blog.didispace.com/spring-boot-learning-21-2-5/
 swagger:
   title: user-center-service
   description: provide user center API
