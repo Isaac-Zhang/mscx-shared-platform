@@ -81,6 +81,11 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-stream-binder-rocketmq</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.spring4all</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>1.9.0.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>

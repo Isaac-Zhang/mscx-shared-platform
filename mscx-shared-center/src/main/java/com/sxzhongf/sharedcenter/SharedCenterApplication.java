@@ -1,5 +1,6 @@
 package com.sxzhongf.sharedcenter;
 
+import com.spring4all.swagger.EnableSwagger2Doc;
 import com.sxzhongf.sharedcenter.configuration.UserCenterFeignConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @since 2019/7/11
  */
 @MapperScan("com.sxzhongf")
+@EnableSwagger2Doc
 @SpringBootApplication
 @EnableFeignClients
     //(defaultConfiguration = GlobalFeignConfiguration.class) 开启feign全局默认配置
