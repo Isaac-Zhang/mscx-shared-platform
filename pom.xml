@@ -38,6 +38,7 @@
         <module>mscx-database</module>
         <module>mscx-user-center</module>
         <module>mscx-shared-center</module>
+        <module>mscx-spring-boot-calculation-plugin</module>
     </modules>
 
     <properties>
