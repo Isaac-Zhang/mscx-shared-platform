@@ -2,6 +2,8 @@ package com.sxzhongf.sharedcenter.controller.content;
 
 import com.sxzhongf.sharedcenter.domain.dto.content.ShareDTO;
 import com.sxzhongf.sharedcenter.service.ShareService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +22,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RequestMapping("/share")
+@Api(tags = "内容中心")
 public class ShareController {
 
     private final ShareService shareService;
 
     @GetMapping("/{id}")
+    @ApiOperation("根据Id获取共享内容")
     public ShareDTO findById(@PathVariable Long id) {
         return this.shareService.findById(id);
     }
