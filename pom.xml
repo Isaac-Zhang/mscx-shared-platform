@@ -40,6 +40,7 @@
         <module>mscx-shared-center</module>
         <module>mscx-spring-boot-calculation-plugin</module>
       <module>mscx-camel-spring-plugin</module>
+        <module>mscx-karaf-rest-plugin</module>
     </modules>
 
     <properties>

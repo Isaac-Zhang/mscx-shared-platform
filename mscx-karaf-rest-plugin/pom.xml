@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>mscx-shared-platform</artifactId>
+    <groupId>com.sxzhongf</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>mscx-karaf-rest-plugin</artifactId>
+  <name>Apache Karaf :: Examples :: REST</name>
+  <modules>
+    <module>mscx-karaf-rest-provider</module>
+    <module>mscx-karaf-rest-api</module>
+    <module>mscx-karaf-rest-client</module>
+    <module>mscx-karaf-rest-whiteboard</module>
+    <module>mscx-karaf-rest-features</module>
+  </modules>
+  <packaging>pom</packaging>
+
+
+  <properties>
+    <cxf.version>3.3.2</cxf.version>
+  </properties>
+
+
+  <repositories>
+    <!-- Apache snapshots -->
+    <repository>
+      <id>apache-snapshots</id>
+      <name>Apache Snapshots Repository</name>
+      <url>https://repository.apache.org/content/groups/snapshots-group</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <!-- OPS4J SNAPSHOT repository -->
+    <repository>
+      <id>ops4j.sonatype.snapshots.deploy</id>
+      <name>OPS4J snapshot repository</name>
+      <url>https://oss.sonatype.org/content/repositories/ops4j-snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <!-- Apache snapshots -->
+    <pluginRepository>
+      <id>apache-snapshots</id>
+      <name>Apache Snapshots Repository</name>
+      <url>https://repository.apache.org/content/groups/snapshots-group</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
