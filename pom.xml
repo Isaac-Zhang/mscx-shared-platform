@@ -39,10 +39,12 @@
         <module>mscx-user-center</module>
         <module>mscx-shared-center</module>
         <module>mscx-spring-boot-calculation-plugin</module>
+      <module>mscx-camel-spring-plugin</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
+        <camel.version>3.0.0-RC2</camel.version>
     </properties>
 
     <groupId>com.sxzhongf</groupId>
