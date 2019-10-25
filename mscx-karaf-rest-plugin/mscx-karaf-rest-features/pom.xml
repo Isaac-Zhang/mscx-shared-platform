@@ -10,6 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>mscx-karaf-rest-features</artifactId>
+  <description>this provides a Karaf features repository used for the deployment.</description>
   <packaging>pom</packaging>
 
   <build>
