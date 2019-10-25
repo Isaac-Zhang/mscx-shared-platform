@@ -10,6 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>mscx-karaf-rest-http</artifactId>
+  <description>this is a regular Blueprint REST client bundle using Java Http.</description>
   <packaging>bundle</packaging>
 
   <dependencies>
