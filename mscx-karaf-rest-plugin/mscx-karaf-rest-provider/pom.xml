@@ -10,6 +10,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>mscx-karaf-rest-provider</artifactId>
+  <description>this is a blueprint bundle providing the BookingServiceRest implementation of the
+    BookingService interface.
+  </description>
   <packaging>bundle</packaging>
 
   <dependencies>

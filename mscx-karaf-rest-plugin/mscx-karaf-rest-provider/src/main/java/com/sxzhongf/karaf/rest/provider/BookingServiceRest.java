@@ -15,7 +15,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 /***
- * todo
+ * providing the BookingServiceRest implementation of the BookingService interface.
  *
  * @Company GeekPlus
  * @Project mscx-shared-platform
