@@ -11,7 +11,7 @@
 
   <artifactId>mscx-karaf-rest-plugin</artifactId>
   <groupId>com.sxzhongf.plugins</groupId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0.SNAPSHOT</version>
   <name>Apache Karaf :: Examples :: REST</name>
   <modules>
     <module>mscx-karaf-rest-provider</module>
@@ -26,6 +26,7 @@
   <properties>
     <cxf.version>3.3.2</cxf.version>
     <felix.plugin.version>4.2.1</felix.plugin.version>
+    <jackson.version>2.10.0</jackson.version>
     <surefire.argLine />
     <bnd.version.policy>[$(version;==;$(@)),$(version;+;$(@)))</bnd.version.policy>
     <appendedResourcesDirectory>${basedir}/etc/appended-resources</appendedResourcesDirectory>
