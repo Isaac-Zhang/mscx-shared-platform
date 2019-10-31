@@ -33,11 +33,12 @@ public class FeaturesApplicationBoot {
 
         // stop plugins
 //        PluginManager pluginManager = applicationContext.getBean(PluginManager.class);
-        PluginManager pluginManager =  new SpringPluginManager(new File("C:/work/plugins").toPath());
+//        PluginManager pluginManager =  new SpringPluginManager(new File("C:/work/plugins").toPath());
+        PluginManager pluginManager =  new DefaultPluginManager(new File("/mscx-features/plugins").toPath());
 
-        // start and load all plugins of application
-        pluginManager.loadPlugins();
-        pluginManager.startPlugins();
+//        // start and load all plugins of application
+//        pluginManager.loadPlugins();
+//        pluginManager.startPlugins();
 //        // retrieves manually the extensions for the Greeting.class extension point
 //        List<IGreeting> greetings = pluginManager.getExtensions(IGreeting.class);
 //        System.out.println("greetings.size() = " + greetings.size());
