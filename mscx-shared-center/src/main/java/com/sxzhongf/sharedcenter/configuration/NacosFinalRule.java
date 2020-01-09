@@ -58,8 +58,8 @@ public class NacosFinalRule extends AbstractLoadBalancerRule {
             List<Instance> metadataVersionMatchInstances = instances;
             if (StringUtils.isNoneBlank(targetVersion)) {
                 metadataVersionMatchInstances = instances.stream()
-                                                         .filter(instance -> Objects.equals(targetVersion, instance.getMetadata().get("version")))
-                                                         .collect(Collectors.toList());
+                    .filter(instance -> Objects.equals(targetVersion, instance.getMetadata().get("version")))
+                    .collect(Collectors.toList());
                 if (CollectionUtils.isEmpty(metadataVersionMatchInstances)) {
                     log.warn("未找到元数据匹配的目标实例！请检查配置。targetVersion = {}, instance = {}", targetVersion, instances);
                     return null;
@@ -70,9 +70,9 @@ public class NacosFinalRule extends AbstractLoadBalancerRule {
             // 如果配置了集群名称，需要筛选同集群下元数据匹配的实例
             if (StringUtils.isNoneBlank(clusterName)) {
                 clusterMetadataMatchInstances =
-                        metadataVersionMatchInstances.stream()
-                                                     .filter(instance -> Objects.equals(clusterName, instance.getClusterName()))
-                                                     .collect(Collectors.toList());
+                    metadataVersionMatchInstances.stream()
+                        .filter(instance -> Objects.equals(clusterName, instance.getClusterName()))
+                        .collect(Collectors.toList());
                 if (CollectionUtils.isEmpty(clusterMetadataMatchInstances)) {
                     log.warn("发生跨集群调用，name = {},clusterName = {}", serviceName, clusterName);
                     clusterMetadataMatchInstances = metadataVersionMatchInstances;

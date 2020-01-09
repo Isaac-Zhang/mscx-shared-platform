@@ -5,9 +5,9 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="content" jdbcType="VARCHAR" property="content" />
-    <result column="show_flag" jdbcType="BIT" property="showFlag" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <id column="id" jdbcType="BIGINT" property="id"/>
+    <result column="content" jdbcType="VARCHAR" property="content"/>
+    <result column="show_flag" jdbcType="BIT" property="showFlag"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
   </resultMap>
 </mapper>

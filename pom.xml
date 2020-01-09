@@ -38,10 +38,7 @@
     <module>mscx-database</module>
     <module>mscx-user-center</module>
     <module>mscx-shared-center</module>
-    <module>mscx-spring-boot-calculation-plugin</module>
-    <module>mscx-camel-spring-plugin</module>
-    <module>mscx-karaf-rest-plugin</module>
-    <module>pf4j-spring-demo</module>
+    <module>mscx-gateway</module>
   </modules>
 
   <properties>

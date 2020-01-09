@@ -56,7 +56,7 @@ public class TestController {
     @GetMapping("/test-hot")
     @SentinelResource("hot")
     public String testHot(@RequestParam(required = false) String a,
-                          @RequestParam(required = false) String b) {
+        @RequestParam(required = false) String b) {
         return a + " " + b;
     }
 
@@ -102,10 +102,10 @@ public class TestController {
 
     @GetMapping("/test-sentinel-resource")
     @SentinelResource(
-            value = "test-sentinel-api",
-            blockHandler = "blockException",
-            blockHandlerClass = SharedCenterBlockHandler.class,
-            fallback= "fallback")
+        value = "test-sentinel-api",
+        blockHandler = "blockException",
+        blockHandlerClass = SharedCenterBlockHandler.class,
+        fallback = "fallback")
     public String testSentinelResource(@RequestParam(required = false) String a) {
         // ...被保护的业务逻辑处理
         if (StringUtils.isEmpty(a)) {
@@ -117,8 +117,7 @@ public class TestController {
 
 
     /**
-     * testSentinelResource fallback method
-     * {@link SentinelResource} #fallback 在< 1.6的版本中，不能补货BlockException
+     * testSentinelResource fallback method {@link SentinelResource} #fallback 在< 1.6的版本中，不能补货BlockException
      */
     public String fallback(String a) {
         return "fallback 对应《降级规则》";
@@ -144,7 +143,7 @@ public class TestController {
     private String yourConfiguration;
 
     @GetMapping("/test-config")
-    public String configTest(){
+    public String configTest() {
         return this.yourConfiguration;
     }
 }

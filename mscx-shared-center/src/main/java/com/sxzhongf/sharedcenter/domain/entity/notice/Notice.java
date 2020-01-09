@@ -11,6 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @Table(name = "notice")
 public class Notice {
+
     /**
      * id
      */

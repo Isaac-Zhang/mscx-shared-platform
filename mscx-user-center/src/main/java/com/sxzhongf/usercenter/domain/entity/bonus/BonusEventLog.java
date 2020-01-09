@@ -11,6 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @Table(name = "bonus_event_log")
 public class BonusEventLog {
+
     /**
      * Id
      */

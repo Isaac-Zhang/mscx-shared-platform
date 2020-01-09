@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 public class RibbonConfiguration {
 
     @Bean
-    public IRule ribbonRule(){
+    public IRule ribbonRule() {
         return new NacosFinalRule();
     }
 }

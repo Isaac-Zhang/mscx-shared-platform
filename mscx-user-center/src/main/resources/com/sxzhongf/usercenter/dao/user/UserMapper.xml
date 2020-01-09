@@ -5,13 +5,13 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="wx_id" jdbcType="VARCHAR" property="wxId" />
-    <result column="wx_nickname" jdbcType="VARCHAR" property="wxNickname" />
-    <result column="roles" jdbcType="VARCHAR" property="roles" />
-    <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="bonus" jdbcType="INTEGER" property="bonus" />
+    <id column="id" jdbcType="BIGINT" property="id"/>
+    <result column="wx_id" jdbcType="VARCHAR" property="wxId"/>
+    <result column="wx_nickname" jdbcType="VARCHAR" property="wxNickname"/>
+    <result column="roles" jdbcType="VARCHAR" property="roles"/>
+    <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    <result column="bonus" jdbcType="INTEGER" property="bonus"/>
   </resultMap>
 </mapper>

@@ -1,13 +1,14 @@
 package com.sxzhongf.usercenter.domain.entity.user;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
-import java.util.List;
-import java.util.stream.Stream;
-import javax.persistence.*;
-
-import lombok.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
@@ -17,6 +18,7 @@ import lombok.*;
 public class User
 //    implements Comparable<User>
 {
+
     /**
      * Id
      */

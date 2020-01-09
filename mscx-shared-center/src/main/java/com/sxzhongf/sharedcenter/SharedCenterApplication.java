@@ -1,7 +1,6 @@
 package com.sxzhongf.sharedcenter;
 
 import com.spring4all.swagger.EnableSwagger2Doc;
-import com.sxzhongf.sharedcenter.configuration.UserCenterFeignConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -20,15 +19,15 @@ import tk.mybatis.spring.annotation.MapperScan;
 @EnableSwagger2Doc
 @SpringBootApplication
 @EnableFeignClients
-    //(defaultConfiguration = GlobalFeignConfiguration.class) 开启feign全局默认配置
+//(defaultConfiguration = GlobalFeignConfiguration.class) 开启feign全局默认配置
 public class SharedCenterApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(SharedCenterApplication.class, args);
     }
 
     /**
-     * 在Spring 容器中，创建一个对象，类型是{@link RestTemplate}
-     * 名称/ID 为 restTemplate
+     * 在Spring 容器中，创建一个对象，类型是{@link RestTemplate} 名称/ID 为 restTemplate
      * <bean id ="restTemplate" class="XXX.RestTemplate" />
      * {@link LoadBalanced} 为RestTemplate整合Ribbon调用
      *

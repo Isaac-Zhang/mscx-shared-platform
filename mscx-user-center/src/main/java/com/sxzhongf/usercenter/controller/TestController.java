@@ -23,8 +23,7 @@ import java.util.List;
 public class TestController {
 
     /**
-     * @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-     * //处理IDEA注入警告的方式推荐lombok实现
+     * @RequiredArgsConstructor(onConstructor = @__(@Autowired)) //处理IDEA注入警告的方式推荐lombok实现
      */
     private final UserMapper userMapper;
 
@@ -46,24 +45,10 @@ public class TestController {
     private DiscoveryClient discoveryClient;
 
     /**
-     * [
-     * {
-     * serviceId: "shared-center",
-     * host: "172.16.81.73",
-     * port: 8010,
-     * secure: false,
-     * metadata: {
-     * nacos.instanceId: "172.16.81.73#8010#DEFAULT#DEFAULT_GROUP@@shared-center",
-     * nacos.weight: "1.0",
-     * nacos.cluster: "DEFAULT",
-     * nacos.healthy: "true",
-     * preserved.register.source: "SPRING_CLOUD"
-     * },
-     * uri: "http://172.16.81.73:8010",
-     * scheme: null,
-     * instanceId: null
-     * }
-     * ]
+     * [ { serviceId: "shared-center", host: "172.16.81.73", port: 8010, secure: false, metadata: { nacos.instanceId:
+     * "172.16.81.73#8010#DEFAULT#DEFAULT_GROUP@@shared-center", nacos.weight: "1.0", nacos.cluster: "DEFAULT",
+     * nacos.healthy: "true", preserved.register.source: "SPRING_CLOUD" }, uri: "http://172.16.81.73:8010", scheme:
+     * null, instanceId: null } ]
      */
     @GetMapping("/discovery")
     public List<ServiceInstance> getDiscovertClients() {
@@ -72,10 +57,7 @@ public class TestController {
     }
 
     /**
-     * [
-     * "user-center",
-     * "shared-center"
-     * ]
+     * [ "user-center", "shared-center" ]
      */
     @GetMapping("/services")
     public List<String> getServices() {

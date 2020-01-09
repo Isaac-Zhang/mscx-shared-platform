@@ -5,11 +5,11 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="user_id" jdbcType="BIGINT" property="userId" />
-    <result column="value" jdbcType="INTEGER" property="value" />
-    <result column="event" jdbcType="VARCHAR" property="event" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="user_id" jdbcType="BIGINT" property="userId"/>
+    <result column="value" jdbcType="INTEGER" property="value"/>
+    <result column="event" jdbcType="VARCHAR" property="event"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    <result column="description" jdbcType="VARCHAR" property="description"/>
   </resultMap>
 </mapper>

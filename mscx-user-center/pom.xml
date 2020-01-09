@@ -1,131 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.sxzhongf</groupId>
-        <artifactId>mscx-shared-platform</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
-
+  <parent>
     <groupId>com.sxzhongf</groupId>
-    <artifactId>mscx-user-center</artifactId>
+    <artifactId>mscx-shared-platform</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>mscx-user-center</name>
-    <description>
-        用户中心微服务
-    </description>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>tk.mybatis</groupId>
-            <artifactId>mapper-spring-boot-starter</artifactId>
-            <version>2.1.5</version>
-        </dependency>
+  <groupId>com.sxzhongf</groupId>
+  <artifactId>mscx-user-center</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>mscx-user-center</name>
+  <description>
+    用户中心微服务
+  </description>
 
-        <dependency>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>tk.mybatis</groupId>
+      <artifactId>mapper-spring-boot-starter</artifactId>
+      <version>2.1.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.16</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.8</version>
+    </dependency>
+
+    <!--
+        spring-cloud-starter-${spring cloud child project}-[${module name}]
+    -->
+    <!-- 添加 nacos 依赖-->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+    </dependency>
+    <!--整合Swagger2-->
+    <dependency>
+      <groupId>com.spring4all</groupId>
+      <artifactId>swagger-spring-boot-starter</artifactId>
+      <version>1.9.0.RELEASE</version>
+    </dependency>
+
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!--springboot 构建可执行fat jars必须的插件，如不添加，在生产环境会有问题-->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.mybatis.generator</groupId>
+        <artifactId>mybatis-generator-maven-plugin</artifactId>
+        <version>1.3.6</version>
+        <configuration>
+          <configurationFile>
+            ${basedir}/src/main/resources/generator/generatorConfig.xml
+          </configurationFile>
+          <overwrite>true</overwrite>
+          <verbose>true</verbose>
+        </configuration>
+        <dependencies>
+          <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.16</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
-        </dependency>
-
-        <!--
-            spring-cloud-starter-${spring cloud child project}-[${module name}]
-        -->
-        <!-- 添加 nacos 依赖-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-        </dependency>
-        <!--整合Swagger2-->
-        <dependency>
-            <groupId>com.spring4all</groupId>
-            <artifactId>swagger-spring-boot-starter</artifactId>
-            <version>1.9.0.RELEASE</version>
-        </dependency>
-
-
-    </dependencies>
-
-    <build>
-        <plugins>
-            <!--springboot 构建可执行fat jars必须的插件，如不添加，在生产环境会有问题-->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.6</version>
-                <configuration>
-                    <configurationFile>
-                        ${basedir}/src/main/resources/generator/generatorConfig.xml
-                    </configurationFile>
-                    <overwrite>true</overwrite>
-                    <verbose>true</verbose>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.16</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>tk.mybatis</groupId>
-                        <artifactId>mapper</artifactId>
-                        <version>4.1.5</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <!--生成 AsciiDoc 文档(swagger2markup)-->
-            <plugin>
-                <groupId>io.github.swagger2markup</groupId>
-                <artifactId>swagger2markup-maven-plugin</artifactId>
-                <version>1.3.3</version>
-                <configuration>
-                    <swaggerInput>http://localhost:8023/v2/api-docs</swaggerInput>
-                    <outputDir>src/docs/asciidoc/generated-by-plugin</outputDir>
-                    <config>
-                        <swagger2markup.markupLanguage>ASCIIDOC</swagger2markup.markupLanguage>
-                    </config>
-                </configuration>
-            </plugin>
-            <!--生成 HTML 文档-->
-            <plugin>
-                <groupId>org.asciidoctor</groupId>
-                <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>1.5.6</version>
-                <configuration>
-                    <sourceDirectory>src/docs/asciidoc/generated-by-plugin</sourceDirectory>
-                    <outputDirectory>src/docs/asciidoc/html</outputDirectory>
-                    <backend>html</backend>
-                    <sourceHighlighter>coderay</sourceHighlighter>
-                    <attributes>
-                        <toc>left</toc>
-                    </attributes>
-                </configuration>
-            </plugin>
+          </dependency>
+          <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>4.1.5</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <!--生成 AsciiDoc 文档(swagger2markup)-->
+      <plugin>
+        <groupId>io.github.swagger2markup</groupId>
+        <artifactId>swagger2markup-maven-plugin</artifactId>
+        <version>1.3.3</version>
+        <configuration>
+          <swaggerInput>http://localhost:8023/v2/api-docs</swaggerInput>
+          <outputDir>src/docs/asciidoc/generated-by-plugin</outputDir>
+          <config>
+            <swagger2markup.markupLanguage>ASCIIDOC</swagger2markup.markupLanguage>
+          </config>
+        </configuration>
+      </plugin>
+      <!--生成 HTML 文档-->
+      <plugin>
+        <groupId>org.asciidoctor</groupId>
+        <artifactId>asciidoctor-maven-plugin</artifactId>
+        <version>1.5.6</version>
+        <configuration>
+          <sourceDirectory>src/docs/asciidoc/generated-by-plugin</sourceDirectory>
+          <outputDirectory>src/docs/asciidoc/html</outputDirectory>
+          <backend>html</backend>
+          <sourceHighlighter>coderay</sourceHighlighter>
+          <attributes>
+            <toc>left</toc>
+          </attributes>
+        </configuration>
+      </plugin>
 
 
-        </plugins>
-    </build>
+    </plugins>
+  </build>
 </project>

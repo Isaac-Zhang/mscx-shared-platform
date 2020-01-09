@@ -29,12 +29,12 @@ public class UserController {
     }
 
     @GetMapping("/q")
-    public User query(User user){
+    public User query(User user) {
         return user;
     }
 
     @PostMapping("/create")
-    public User createUser(@RequestBody User user){
+    public User createUser(@RequestBody User user) {
         return null;
     }
 }

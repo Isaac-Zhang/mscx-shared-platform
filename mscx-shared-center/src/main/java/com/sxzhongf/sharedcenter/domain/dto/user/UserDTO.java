@@ -18,6 +18,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class UserDTO {
+
     /**
      * Id
      */

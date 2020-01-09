@@ -12,6 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class ShareDTO {
+
     /**
      * id
      */

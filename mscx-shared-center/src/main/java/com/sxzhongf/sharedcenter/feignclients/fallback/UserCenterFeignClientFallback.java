@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class UserCenterFeignClientFallback implements IUserCenterFeignClient {
+
     @Override
     public UserDTO findById(Long userId) {
         UserDTO userDTO = new UserDTO();

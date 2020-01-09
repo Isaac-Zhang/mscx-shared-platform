@@ -10,6 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 @Table(name = "mid_user_share")
 public class MidUserShare {
+
     @Id
     @GeneratedValue(generator = "JDBC")
     private Long id;

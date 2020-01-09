@@ -17,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @Data
 @Slf4j
 public class UserCenterApplication {
+
     public static final Logger LOGGER = LoggerFactory.getLogger(UserCenterApplication.class);
 
     public static void main(String[] args) {

@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserService {
+
     private final UserMapper userMapper;
 
     /**

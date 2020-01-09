@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ShareService {
+
     private final ShareMapper shareMapper;
     //    private final RestTemplate restTemplate;
 //    private final DiscoveryClient discoveryClient;

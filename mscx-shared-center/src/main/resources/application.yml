@@ -56,7 +56,7 @@ ribbon:
     clients: user-center # 为哪些clients开启
 logging:
   level:
-   #com.sxzhongf: debug
+    #com.sxzhongf: debug
     com.sxzhongf.sharedcenter.feignclients.IUserCenterFeignClient: debug
     com.sxzhongf.sharedcenter.feignclients.ITestUserCenterFeignClient: debug
 feign:

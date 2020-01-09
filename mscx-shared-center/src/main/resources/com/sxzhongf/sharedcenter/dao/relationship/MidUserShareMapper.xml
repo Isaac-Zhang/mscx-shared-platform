@@ -5,8 +5,8 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="share_id" jdbcType="BIGINT" property="shareId" />
-    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <id column="id" jdbcType="BIGINT" property="id"/>
+    <result column="share_id" jdbcType="BIGINT" property="shareId"/>
+    <result column="user_id" jdbcType="BIGINT" property="userId"/>
   </resultMap>
 </mapper>

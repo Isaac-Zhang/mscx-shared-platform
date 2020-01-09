@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author <a href="mailto:magicianisaac@gmail.com">Isaac.Zhang | 若初</a>
  * @since 2019/7/16
  */
-@FeignClient(name = "xxxxx",url = "http://www.baidu.com")
+@FeignClient(name = "xxxxx", url = "http://www.baidu.com")
 public interface ITestBaiduFeignClient {
 
     @GetMapping("")

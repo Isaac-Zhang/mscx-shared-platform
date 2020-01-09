@@ -61,8 +61,8 @@ public class NacosSameClusterWeightRule extends AbstractLoadBalancerRule {
             // 2. 过滤出相同集群下的所有实例 B
             List<Instance> sameClusterInstances = instances.stream()
 //                                                           .filter(instance -> "v1".equals(instance.getMetadata().get("version")))
-                                                           .filter(instance -> Objects.equals(instance.getClusterName(), clusterName))
-                                                           .collect(Collectors.toList());
+                .filter(instance -> Objects.equals(instance.getClusterName(), clusterName))
+                .collect(Collectors.toList());
             // 3. 如果B为空，则使用 A
             List<Instance> instancesChoosen = new ArrayList<>();
             if (CollectionUtils.isEmpty(sameClusterInstances)) {
@@ -86,6 +86,7 @@ public class NacosSameClusterWeightRule extends AbstractLoadBalancerRule {
 }
 
 class ExtendBalancer extends Balancer {
+
     public static Instance getHostByRandomWeightOverride(List<Instance> hosts) {
         return getHostByRandomWeight(hosts);
     }
