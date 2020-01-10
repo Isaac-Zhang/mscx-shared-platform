@@ -3,6 +3,7 @@ package com.sxzhongf.sharedcenter;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
@@ -15,9 +16,9 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @author <a href="mailto:magicianisaac@gmail.com">Isaac.Zhang | 若初</a>
  * @since 2019/7/11
  */
-@MapperScan("com.sxzhongf")
+@MapperScan("com.sxzhongf.sharedcenter.dao")
 @EnableSwagger2Doc
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableFeignClients
 //(defaultConfiguration = GlobalFeignConfiguration.class) 开启feign全局默认配置
 public class SharedCenterApplication {

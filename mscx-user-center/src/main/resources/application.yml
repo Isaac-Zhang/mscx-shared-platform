@@ -3,6 +3,10 @@ server:
 #    context-path: /user-center #http请求的根路径（请求前缀，在handle的mapping之前，需要127.0.0.1/user-center/XXXX）
   port: 8023
 spring:
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: geekplus_tx_group  #geekplus_tx_group，server，client都要保持一致
   datasource:
     url: jdbc:mysql://localhost:3306/shared_platform_user_center?serverTimezone=GMT%2B8
     hikari:

@@ -2,6 +2,7 @@ package com.sxzhongf.distributed.transaction.service;
 
 import com.sxzhongf.distributed.transaction.domain.dto.UserDTO;
 import com.sxzhongf.distributed.transaction.feignclients.ISharedCenterFeignClient;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,9 @@ public class DistributedDemoService {
 
     private final ISharedCenterFeignClient sharedCenterFeignClient;
 
-    public UserDTO getById(Long uid){
+    @GlobalTransactional(name = "dtd-get-user", rollbackFor = Exception.class)
+    public UserDTO getById(Long uid) {
+        log.info("分布式事务开始---->,{}" + uid);
         return this.sharedCenterFeignClient.findById(uid);
     }
 }

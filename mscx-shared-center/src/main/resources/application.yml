@@ -9,6 +9,10 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: shared-center
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: geekplus_tx_group  #geekplus_tx_group，server，client都要保持一致
 eureka:
   client:
     service-url:
