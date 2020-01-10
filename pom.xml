@@ -31,7 +31,7 @@
         Greenwich RELEASE (Greenwich 版本的第一个正式版本)
         Greenwich SR2 (Greenwich 版本的第二个修复版本)
     -->
-    <version>2.1.5.RELEASE</version>
+    <version>2.2.2.RELEASE</version>
   </parent>
 
   <modules>
@@ -43,7 +43,6 @@
 
   <properties>
     <java.version>1.8</java.version>
-    <camel.version>3.0.0-RC2</camel.version>
   </properties>
 
   <groupId>com.sxzhongf</groupId>
@@ -76,7 +75,7 @@
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Greenwich.SR2</version>
+        <version>Hoxton.RELEASE</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

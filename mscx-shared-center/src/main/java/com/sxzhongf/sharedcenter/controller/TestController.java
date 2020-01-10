@@ -139,11 +139,11 @@ public class TestController {
         FlowRuleManager.loadRules(ruleList);
     }
 
-    @Value("${your.configuration}")
-    private String yourConfiguration;
-
-    @GetMapping("/test-config")
-    public String configTest() {
-        return this.yourConfiguration;
-    }
+//    @Value("${your.configuration}")
+//    private String yourConfiguration;
+//
+//    @GetMapping("/test-config")
+//    public String configTest() {
+//        return this.yourConfiguration;
+//    }
 }
