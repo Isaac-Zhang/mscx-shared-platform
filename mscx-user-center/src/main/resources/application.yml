@@ -1,3 +1,7 @@
+server:
+#  servlet:
+#    context-path: /user-center #http请求的根路径（请求前缀，在handle的mapping之前，需要127.0.0.1/user-center/XXXX）
+  port: 8023
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/shared_platform_user_center?serverTimezone=GMT%2B8
@@ -9,22 +13,30 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: user-center
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-        metadata:
-          version: v1
-        # 指定namespace(profile)
-        #namespace: 404060ce-2e6c-4f72-8083-2beb4ca921ad
-        # 指定集群名称
-        cluster-name: NJ
-    sentinel:
-      transport:
-        dashboard: localhost:1111
-server:
-  port: 8023
+#使用eureka替换掉nacos discovery
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#        metadata:
+#          version: v1
+#        # 指定namespace(profile)
+#        #namespace: 404060ce-2e6c-4f72-8083-2beb4ca921ad
+#        # 指定集群名称
+#        cluster-name: NJ
+#    sentinel:
+#      transport:
+#        dashboard: localhost:1111
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 #  swagger.title：标题
 #  swagger.description：描述
 #  swagger.version：版本

@@ -9,41 +9,45 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: shared-center
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-        cluster-name: NJ
-        #namespace: 404060ce-2e6c-4f72-8083-2beb4ca921ad
-        metadata:
-          # 当前实例版本
-          version: v1
-          # 当前版本的内容中心允许调用的用户中心版本
-          target-version: v1
-    sentinel:
-      datasource:
-        flow:
-          nacos:
-            server-addr: localhost:8848
-            dataId: ${spring.application.name}-flow-rules
-            groupId: SENTINEL_GROUP
-            # 规则类型，取值见：com.alibaba.cloud.sentinel.datasource.RuleType
-            rule_type: flow
-        degrade:
-          nacos:
-            server-addr: localhost:8848
-            dataId: ${spring.application.name}-degrade-rules
-            groupId: SENTINEL_GROUP
-            rule-type: degrade
-      transport:
-        # 指定sentinel 控制台的地址
-        dashboard: localhost:1111
-      filter:
-        # 关闭掉对SpringMVC 端点的保护
-        enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#        cluster-name: NJ
+#        #namespace: 404060ce-2e6c-4f72-8083-2beb4ca921ad
+#        metadata:
+#          # 当前实例版本
+#          version: v1
+#          # 当前版本的内容中心允许调用的用户中心版本
+#          target-version: v1
+#    sentinel:
+#      datasource:
+#        flow:
+#          nacos:
+#            server-addr: localhost:8848
+#            dataId: ${spring.application.name}-flow-rules
+#            groupId: SENTINEL_GROUP
+#            # 规则类型，取值见：com.alibaba.cloud.sentinel.datasource.RuleType
+#            rule_type: flow
+#        degrade:
+#          nacos:
+#            server-addr: localhost:8848
+#            dataId: ${spring.application.name}-degrade-rules
+#            groupId: SENTINEL_GROUP
+#            rule-type: degrade
+#      transport:
+#        # 指定sentinel 控制台的地址
+#        dashboard: localhost:1111
+#      filter:
+#        # 关闭掉对SpringMVC 端点的保护
+#        enabled: false
 
-  main:
-    allow-bean-definition-overriding: true
+#  main:
+#    allow-bean-definition-overriding: true
 server:
   port: 8011
 

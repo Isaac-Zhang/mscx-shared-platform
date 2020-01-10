@@ -39,6 +39,7 @@
     <module>mscx-user-center</module>
     <module>mscx-shared-center</module>
     <module>mscx-gateway</module>
+    <module>mscx-discovery-eureka</module>
   </modules>
 
   <properties>

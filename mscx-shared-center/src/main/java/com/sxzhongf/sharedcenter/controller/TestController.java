@@ -9,15 +9,12 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
-import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.sxzhongf.sharedcenter.domain.dto.user.UserDTO;
 import com.sxzhongf.sharedcenter.feignclients.test.ITestBaiduFeignClient;
 import com.sxzhongf.sharedcenter.sentinal.SharedCenterBlockHandler;
-import com.sxzhongf.sharedcenter.service.test.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,13 +34,13 @@ import java.util.List;
 @RefreshScope
 public class TestController {
 
-    @Autowired
-    private TestService testService;
-
-    @GetMapping("/q")
-    public UserDTO query(UserDTO userDTO) {
-        return testService.query(userDTO);
-    }
+//    @Autowired
+//    private TestService testService;
+//
+//    @GetMapping("/q")
+//    public UserDTO query(UserDTO userDTO) {
+//        return testService.query(userDTO);
+//    }
 
     @Autowired(required = false)
     private ITestBaiduFeignClient testBaiduFeignClient;
