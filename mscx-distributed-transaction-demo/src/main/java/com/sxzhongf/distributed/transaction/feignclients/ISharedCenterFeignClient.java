@@ -1,9 +1,12 @@
 package com.sxzhongf.distributed.transaction.feignclients;
 
+import com.sxzhongf.distributed.transaction.domain.dto.ShareDTO;
 import com.sxzhongf.distributed.transaction.domain.dto.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(name = "shared-center")
 public interface ISharedCenterFeignClient {
@@ -15,4 +18,7 @@ public interface ISharedCenterFeignClient {
      */
     @GetMapping(path = "/share/{userId}")
     UserDTO findById(@PathVariable Long userId);
+
+    @PostMapping(path = "/share/create")
+    ShareDTO create(@RequestParam String title);
 }

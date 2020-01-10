@@ -2,6 +2,7 @@ package com.sxzhongf.usercenter.controller;
 
 import com.sxzhongf.usercenter.domain.entity.user.User;
 import com.sxzhongf.usercenter.service.user.UserService;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,10 @@ public class UserController {
     }
 
     @PostMapping("/create")
+    @ApiOperation(value = "创建用户---分布式测试")
     public User createUser(@RequestBody User user) {
+        log.info("分布式事务测试---新增用户：{}",user);
+        this.userService.create(user);
         return null;
     }
 }

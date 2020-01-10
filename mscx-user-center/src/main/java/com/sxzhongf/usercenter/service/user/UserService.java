@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * UserService for TODO
  *
@@ -30,4 +32,15 @@ public class UserService {
         return this.userMapper.selectByPrimaryKey(id);
     }
 
+    public void create(User user) {
+        this.userMapper.insertSelective(
+                User.builder()
+                        .wxId(user.getWxId())
+                        .wxNickname(user.getWxNickname())
+                        .roles(user.getRoles())
+                        .bonus(user.getBonus())
+                        .createTime(new Date())
+                        .updateTime(new Date())
+                        .build());
+    }
 }

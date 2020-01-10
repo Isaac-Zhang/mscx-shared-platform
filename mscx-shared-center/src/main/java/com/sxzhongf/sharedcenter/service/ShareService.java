@@ -7,9 +7,12 @@ import com.sxzhongf.sharedcenter.domain.entity.share.Share;
 import com.sxzhongf.sharedcenter.feignclients.IUserCenterFeignClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 /**
  * ShareService for TODO
@@ -80,6 +83,23 @@ public class ShareService {
         BeanUtils.copyProperties(share, shareDTO);
         shareDTO.setWxNickName(userDTO.getWxNickname());
         return shareDTO;
+    }
+
+    public Share create(String title) {
+        val share = Share.builder()
+                .title(title)
+                .userId(1L)
+                .createTime(new Date())
+                .isOriginal(true)
+                .author(title)
+                .price(1)
+                .showFlag(true)
+                .auditStatus("NOT_YET")
+                .build();
+        this.shareMapper.insertSelective(
+                share
+        );
+        return share;
     }
 
 //    public static void main(String[] args) {
