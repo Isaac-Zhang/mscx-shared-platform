@@ -40,6 +40,7 @@
     <module>mscx-shared-center</module>
     <module>mscx-gateway</module>
     <module>mscx-discovery-eureka</module>
+    <module>mscx-distributed-transaction-demo</module>
   </modules>
 
   <properties>

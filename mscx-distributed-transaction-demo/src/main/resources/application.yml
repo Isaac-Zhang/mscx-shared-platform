@@ -1,0 +1,33 @@
+server:
+  port: 1001
+spring:
+  application:
+    name: distributed-transaction
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+logging:
+  level:
+    #com.sxzhongf: debug
+    com.sxzhongf.distributed.transaction.feignclients.ISharedCenterFeignClient: debug
+feign:
+  sentinel:
+    enabled: true
+  client:
+    config:
+      # 单服务配置
+      #user-center:
+      #  loggerLevel: full
+      #全局配置
+      default:
+        loggerLevel: full
+  httpclient:
+    # 为feign启用 apache httpclient 做请求，而不使用默认的urlconection
+    #enabled: true
+    # feign 最大连接数
+    max-connections: 200
+    # feign 单个路径请求的最大连接数
+    max-connections-per-route: 50
+  okhttp:
+    enabled: true
