@@ -17,10 +17,10 @@
     <flyway.user>root</flyway.user>
     <flyway.password>12345678</flyway.password>
     <!-- List are defined as comma-separated values -->
-    <!--        <flyway.schemas>shared_platform_user_center</flyway.schemas>-->
-    <!--        <flyway.url>jdbc:mysql://127.0.0.1:3306/shared_platform_user_center?serverTimezone=GMT%2B8</flyway.url>-->
-    <flyway.schemas>shared_platform_shared_center</flyway.schemas>
-    <flyway.url>jdbc:mysql://127.0.0.1:3306/shared_platform_shared_center?serverTimezone=GMT%2B8</flyway.url>
+            <flyway.schemas>shared_platform_user_center</flyway.schemas>
+            <flyway.url>jdbc:mysql://127.0.0.1:3306/shared_platform_user_center?serverTimezone=GMT%2B8</flyway.url>
+<!--    <flyway.schemas>shared_platform_shared_center</flyway.schemas>-->
+<!--    <flyway.url>jdbc:mysql://127.0.0.1:3306/shared_platform_shared_center?serverTimezone=GMT%2B8</flyway.url>-->
   </properties>
 
   <dependencies>
