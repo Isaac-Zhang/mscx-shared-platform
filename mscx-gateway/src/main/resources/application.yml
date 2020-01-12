@@ -1,28 +1,42 @@
 server:
   port: 9999
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8888/eureka
 spring:
   application:
     name: mscx-gateway
   cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
     gateway:
+      httpserver:
+        wiretap: true
+      httpclient:
+        wiretap: true
       discovery:
         locator:
           # gateway通过discovery自动发现其他微服务
           enabled: true
       routes:
+        - id: distributed-transaction
+          uri: lb://distributed-transaction
+          predicates:
+            - Path=/dtd/**
         - id: after_route
           uri: lb://user-center
           predicates:
-            # 当当前时间晚于设置时间之后,才能访问
-            # 否则得到404错误
-            #- After=2010-01-01T18:00:00.789-07:00[America/Denver]
-            # 当Host属于**.geekplus.com.cn或**.life-runner.com时
-            # http://localhost:9999/** -> user-center/**
-            # eg. http://localhost:9999/users/1 -> user-center/users/1
-            #- Host=**.geekplus.com.cn,**.life-runner.com
+#            # 当当前时间晚于设置时间之后,才能访问
+#            # 否则得到404错误
+#            - After=2010-01-01T18:00:00.789-07:00[America/Denver]
+#            # 当Host属于**.geekplus.com.cn或**.life-runner.com时
+#            # http://localhost:9999/** -> user-center/**
+#            # eg. http://localhost:9999/users/1 -> user-center/users/1
+#            #- Host=**.geekplus.com.cn,**.life-runner.com
             - TimeBetween=上午6:00,下午11:00
             - Path=/users/**
           filters:
@@ -46,3 +60,6 @@ management:
   endpoint:
     health:
       show-details: always
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
