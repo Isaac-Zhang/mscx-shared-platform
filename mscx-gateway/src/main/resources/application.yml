@@ -23,10 +23,14 @@ spring:
           # gateway通过discovery自动发现其他微服务
           enabled: true
       routes:
-        - id: distributed-transaction
+        - id: distributed_route
           uri: lb://distributed-transaction
           predicates:
-            - Path=/dtd/**
+            - Path=/distributed/**
+          filters:
+            - AddRequestHeader=CompanyKey,123456
+            - AddResponseHeader=Success,Isaac
+            - PreLog=CustomLogKey,CustomLogValue
         - id: after_route
           uri: lb://user-center
           predicates:

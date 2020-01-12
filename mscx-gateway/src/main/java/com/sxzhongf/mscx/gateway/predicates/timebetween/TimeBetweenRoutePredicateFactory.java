@@ -45,9 +45,9 @@ public class TimeBetweenRoutePredicateFactory extends AbstractRoutePredicateFact
         return Arrays.asList(START_KEY, END_KEY);
     }
 
-    public static void main(String[] args) {
-        val dateTimeFormatter = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT);
-        System.out.println(dateTimeFormatter.format(LocalTime.now()));
-
-    }
+//    public static void main(String[] args) {
+//        val dateTimeFormatter = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT);
+//        System.out.println(dateTimeFormatter.format(LocalTime.now()));
+//
+//    }
 }
