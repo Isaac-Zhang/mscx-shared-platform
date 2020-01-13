@@ -28,9 +28,10 @@ spring:
           predicates:
             - Path=/distributed/**
           filters:
-            - AddRequestHeader=CompanyKey,123456
-            - AddResponseHeader=Success,Isaac
-            - PreLog=CustomLogKey,CustomLogValue
+            # 局部过滤器配置顺序默认数值从1开始递增
+            - AddRequestHeader=CompanyKey,123456 # sort(1)
+            - AddResponseHeader=Success,Isaac    # sort(2)
+            - PreLog=CustomLogKey,CustomLogValue # sort(3)
         - id: after_route
           uri: lb://user-center
           predicates:
