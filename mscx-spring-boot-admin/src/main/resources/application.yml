@@ -1,0 +1,9 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: mscx-spring-boot-admin
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka

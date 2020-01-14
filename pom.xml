@@ -41,6 +41,7 @@
     <module>mscx-gateway</module>
     <module>mscx-discovery-eureka</module>
     <module>mscx-distributed-transaction-demo</module>
+    <module>mscx-spring-boot-admin</module>
   </modules>
 
   <properties>
