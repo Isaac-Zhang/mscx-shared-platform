@@ -31,6 +31,11 @@ spring:
 #    sentinel:
 #      transport:
 #        dashboard: localhost:1111
+
+#logging:
+#  level:
+#    # 设置sleuth包的日志级别
+#    org.springframework.cloud.sleuth: debug
 eureka:
   client:
     service-url:

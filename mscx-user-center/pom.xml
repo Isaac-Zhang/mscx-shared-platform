@@ -94,6 +94,12 @@
       <version>1.0.0</version>
     </dependency>
 
+    <!--sleuth-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-sleuth</artifactId>
+    </dependency>
+
   </dependencies>
 
   <build>
