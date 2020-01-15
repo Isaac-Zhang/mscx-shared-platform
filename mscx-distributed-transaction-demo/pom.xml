@@ -85,6 +85,12 @@
             <artifactId>seata-all</artifactId>
             <version>1.0.0</version>
         </dependency>
+        
+        <!--zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

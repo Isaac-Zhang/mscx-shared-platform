@@ -7,6 +7,13 @@ spring:
     alibaba:
       seata:
         tx-service-group: geekplus_tx_group  #geekplus_tx_group，server，client都要保持一致
+  #integrated zipkin
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      # 配置采集抽样率，默认0.1(10%)
+      probability: 1.0
   datasource:
     url: jdbc:mysql://localhost:3306/shared_platform_user_center?serverTimezone=GMT%2B8
     hikari:
