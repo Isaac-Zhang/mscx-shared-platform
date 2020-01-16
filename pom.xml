@@ -42,6 +42,7 @@
     <module>mscx-discovery-eureka</module>
     <module>mscx-distributed-transaction-demo</module>
     <module>mscx-spring-boot-admin</module>
+    <module>mscx-seata-1-0-demo</module>
   </modules>
 
   <properties>

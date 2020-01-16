@@ -1,0 +1,66 @@
+server:
+  port: 8001
+# 1.0新添加的enabled激活自动配置，使得我们可以在yaml/properties文件中配置，
+# 避免了以前需要客户端引入2个文件：
+# file.conf 和 registry.conf
+seata:
+  enabled: true # 1.0新特性，需要依赖seata-spring-boot-starter,默认为true
+  tx-service-group: geekplus_tx_group
+#  transport:
+#    type: TCP #default value is TCP
+#    server: NIO #default value is NIO
+#    heartbeat: true #enable heartbeat
+#    enable-client-batch-send-request: true
+#    serialization: seata
+#    compressor: none
+#    shutdown:
+#      wait: 3 #when destroy server, wait seconds
+  registry:
+    type: eureka
+    eureka:
+      service-url: http://localhost:8888/eureka
+#      application: default
+#      weight: 1
+#  service:
+#    vgroup-mapping: geekplus_tx_group
+#    disable-global-transaction: false
+#    disableGlobalTransaction: false
+  client:
+    support:
+      spring:
+        datasource-autoproxy: false
+spring:
+  application:
+    name: seata-1-0-transaction
+  datasource:
+    url: jdbc:mysql://localhost:3306/shared_platform_distributed_transactioncd ?serverTimezone=GMT%2B8
+    #hikari:
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+logging:
+  level:
+    #com.sxzhongf: debug
+    com.sxzhongf.distributed.transaction.feignclients.ISharedCenterFeignClient: debug
+feign:
+  sentinel:
+    enabled: true
+  client:
+    config:
+      #全局配置
+      default:
+        loggerLevel: full
+  httpclient:
+    # 为feign启用 apache httpclient 做请求，而不使用默认的urlconection
+    #enabled: true
+    # feign 最大连接数
+    max-connections: 200
+    # feign 单个路径请求的最大连接数
+    max-connections-per-route: 50
+  okhttp:
+    enabled: true
+
