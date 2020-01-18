@@ -1,0 +1,7 @@
+app:
+  id: P000000001
+apollo:
+  meta: http://192.168.1.200:8080/ # apollo-configservice
+  bootstrap:
+    enabled: true
+    namespaces: application #a,b,c,d

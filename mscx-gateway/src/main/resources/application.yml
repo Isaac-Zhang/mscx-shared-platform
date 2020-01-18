@@ -5,7 +5,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8888/eureka
+      defaultZone: ${gateway.eureka.server-list:http://baidu.com} #http://127.0.0.1:8888/eureka
 spring:
   application:
     name: mscx-gateway
