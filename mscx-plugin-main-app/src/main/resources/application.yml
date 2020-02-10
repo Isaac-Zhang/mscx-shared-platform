@@ -1,0 +1,13 @@
+server:
+  port: 8888
+  maxHttpHeaderSize: 10000000
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mscx-plugin-main-app
+  datasource:
+    url: jdbc:mysql://localhost:3306/shared_platform_user_center?serverTimezone=GMT%2B8
+    hikari:
+      username: root
+      password: 12345678
